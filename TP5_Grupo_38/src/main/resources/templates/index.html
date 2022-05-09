@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 <head>
-	<meta charset="utf-8">
-	<title>TP04 - ProgVisual 2022</title>
+<link rel="stylesheet" href="../static/css/style.css" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+<meta charset="utf-8">
+<title>TP05 - ProgVisual 2022</title>
 </head>
-<body>
-	<header>
-		<h1>G38 - Portal de Capacitación</h1>
-		<img src="../static/images/g38-portal.png" title="G38 - Portal de Capacitación"
-			alt="Imagen presentación del portal G38" width="610" height="406">
-	</header>
-	<nav>
-		<ul>
-			<li><a href="index.html">Inicio</a></li>
-			<li><a href="agenda.html">Agenda</a></li>
-			<li><a href="beneficios.html">Beneficios y Becas</a></li>
-			<li><a href="contacto.html">Contáctanos</a></li>
-		</ul>
-	</nav>
-	<section>
-		<h2>Cursos con inscripción abierta</h2>
+<body class="d-flex flex-column min-vh-100">
+	<header th:replace="/layouts/header::header"> </header>
+
+	<div class="container col-xxl-8 px-4">
+		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+			<div class="col-10 col-sm-8 col-lg-6">
+				<img src="images/g38-portal.png"
+					class="d-block mx-lg-auto img-fluid shadow-lg mb-4"
+					alt="Portal de capacitación" width="700" height="500"
+					loading="lazy">
+			</div>
+			<div class="col-lg-6">
+				<h1 class="display-5 fw-bold lh-1 mb-3"><span class="text-muted">G38</span> · Portal de
+					Capacitación</h1>
+				<p class="lead">Ofrecemos cursos de: Idiomas, Diseño Gráfico y
+					Multimedial, Desarrollo Web y Programación, Marketing, Ventas y
+					Publicidad, entre muchos otros.</p>
+			</div>
+		</div>
+	</div>
+
+	<section class="container border-top">
+		<h2 class="mt-4">Cursos con inscripción abierta</h2>
 		<ol>
 			<li><a href="#">Idiomas</a></li>
 			<li><a href="#">Diseño</a></li>
@@ -28,9 +38,9 @@
 			<li><a href="#">Conferencias</a></li>
 		</ol>
 	</section>
-	<footer>
-		<p>(2022) G38 - Portal de Capacitación – Av. Gral. Güemes 789 –
-			Teléfono (388) 999999 – S. S. de Jujuy, República Argentina.</p>
+	
+	<footer th:replace="/layouts/footer::footer">		
 	</footer>
+	
 </body>
 </html>

@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 <head>
-	<meta charset="utf-8">
-	<title>TP04 - ProgVisual 2022</title>
+<link rel="stylesheet" href="../static/css/style.css" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+<meta charset="utf-8">
+<title>TP05 - ProgVisual 2022</title>
 </head>
-<body>
-	<header>
-		<h1>Calendario académico 2022</h1>
-		<img src="../static/images/calendario.png" title="Calendario académico"
-			alt="Imagen ilustrativa de calendario" width="610"
-			height="406">
-	</header>
-	<nav>
-		<ul>
-			<li><a href="index.html">Inicio</a></li>
-			<li><a href="agenda.html">Agenda</a></li>
-			<li><a href="beneficios.html">Beneficios y Becas</a></li>
-			<li><a href="contacto.html">Contáctanos</a></li>
-		</ul>
-	</nav>
-	<section>
+<body class="d-flex flex-column min-vh-100">
+	<header th:replace="/layouts/header::header"> </header>
+
+	<div class="container col-xxl-8 px-4">
+		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+			<div class="col-10 col-sm-8 col-lg-6">
+				<img src="images/calendario.png"
+					class="d-block mx-lg-auto img-fluid shadow-lg mb-4"
+					alt="Portal de capacitación" width="700" height="500"
+					loading="lazy">
+			</div>
+			<div class="col-lg-6">
+				<h1 class="display-5 fw-bold lh-1 mb-3"><span class="text-muted">Calendario Académico 2022</span></h1>
+
+			</div>
+		</div>
+	</div>
+	<section class="container border-top">
+		<h2 class="mt-4">Oferta académica</h2>
 		<p>Cursos con inscripción abierta en 2022. Nuestra oferta educativa está pensada para transformar estudiantes en profesionales. Sueños en realidades.
 Estamos en constante innovación, promoviendo la excelencia académica y las mejores herramientas educativas. Ofrecemos cursos totalmente actualizados y con excelente salida laboral de: Idiomas, Diseño Gráfico y Multimedial, Desarrollo Web y Programación, Marketing, Ventas y Publicidad, entre muchos otros. Elegí la carrera que querés estudiar y transformate en el profesional que soñaste ser.</p>
 		<video src="../static/videos/video-marketing.mp4" width="640px" controls>
@@ -28,9 +34,7 @@ Estamos en constante innovación, promoviendo la excelencia académica y las mej
 		</video>
 
 	</section>
-	<footer>
-		<p>(2022) G38 - Portal de Capacitación – Av. Gral. Güemes 789 –
-			Teléfono (388) 999999 – S. S. de Jujuy, República Argentina.</p>
+	<footer th:replace="/layouts/footer::footer">		
 	</footer>
 </body>
 </html>
