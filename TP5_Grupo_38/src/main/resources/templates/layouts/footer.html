@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<meta charset="UTF-8">
-		<title>Footer</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+<title>TP05 - ProgVisual 2022</title>
 	</head>
 	
 	<body>
-		<footer th:fragment="footer">
-			<p>(2022) G38 - Portal de Capacitación – Av. Gral. Güemes 789 –
+		<footer th:fragment="footer" class="container">
+			<p class="text-center">(2022) G38 • Portal de Capacitación – Av. Gral. Güemes 789 –
 			Teléfono (388) 999999 – S. S. de Jujuy, República Argentina.</p>
 		</footer>
 	
