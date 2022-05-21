@@ -1,34 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 <head>
+<link rel="stylesheet" href="../static/css/style.css" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
 <meta charset="utf-8">
-<title>TP04 - ProgVisual 2022</title>
+<title>TP05 - ProgVisual 2022</title>
 </head>
-<body>
-	<header>
-		<h1>Contáctanos</h1>
-		<img src="../static/images/contacto.png" title="Contáctanos"
-			alt="Imagen ilustrativa de formulario de contacto" width="610" height="406">
-	</header>
-	<nav>
-		<ul>
-			<li><a href="index.html">Inicio</a></li>
-			<li><a href="agenda.html">Agenda</a></li>
-			<li><a href="beneficios.html">Beneficios y Becas</a></li>
-			<li><a href="contacto.html">Contáctanos</a></li>
-		</ul>
-	</nav>
-	<section>
+<body class="d-flex flex-column min-vh-100">
+	<header th:replace="/layouts/header::header"> </header>
+
+	<div class="container col-xxl-8 px-4">
+		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+			<div class="col-10 col-sm-8 col-lg-6">
+				<img src="images/contacto.png"
+					class="d-block mx-lg-auto img-fluid shadow-lg mb-4"
+					alt="Portal de capacitación" width="700" height="500"
+					loading="lazy">
+			</div>
+			<div class="col-lg-6">
+				<h1 class="display-5 fw-bold lh-1 mb-3"><span class="text-muted">Contáctanos</span></h1>
+
+			</div>
+		</div>
+	</div>
+	<section class="container border-top">
 		<div>
-			<h2>Formulario de contacto</h2>
-			<h3>Escríbenos y en breve nos pondremos en contacto</h3>
+			<h2 class="mt-4">Formulario de contacto</h2>
+			<h5 class="mb-5">Escríbenos y en breve nos pondremos en contacto</h5>
 
 			<form action="http://www.fi.unju.edu.ar" method="post">
-				<label for="id_apellido-nombre">Nombre y Apellido <span>*</span></label>
+				<label for="id_apellido-nombre" class="form-label">Nombre y Apellido <span>*</span></label>
 				<br /> <input id="id_apellido-nombre" type="text"
 					name="apellido-nombre" required="required"
 					placeholder="Escriba su nombre"> <br /> <br /> <label
-					for="provincia">Provincia</label> <br /> <select name="provincia">
+					for="provincia" class="form-label">Provincia</label> <br /> <select name="provincia">
 					<option value="02">Ciudad Autónoma de Buenos Aires</option>
 					<option value="06">Buenos Aires</option>
 					<option value="10">Catamarca</option>
@@ -53,23 +59,23 @@
 					<option value="86">Santiago del Estero</option>
 					<option value="90">Tucumán</option>
 					<option value="94">Tierra del Fuego</option>
-				</select> <br /> <br /> <label for="id_telefono">Teléfono </label> <br />
+				</select> <br /> <br /> <label for="id_telefono" class="form-label">Teléfono </label> <br />
 				<input id="id_telefono" type="number" name="telefono"
 					placeholder="999-9999999"> <br /> <br /> <label
-					for="id_email">Correo Electrónico <span>*</span></label> <br /> <input
-					id="id_email" type="email" name="emial" required="required"
-					placeholder="midireccion@correo.com"> <br /> <br /> <label>Estado
+					for="id_email" class="form-label">Correo Electrónico <span>*</span></label> <br /> <input
+					id="id_email" type="email" name="email" required="required"
+					placeholder="midireccion@correo.com"> <br /> <br /> <label class="form-label">Estado
 					Civil</label> <br /> <label for="id_casado">Casado</label> <input
 					id="id_casado" type="radio" value="casado" name="tipo_estado"
 					checked="checked" /> <label for="id_soltero">Soltero</label> <input
 					id="id_soltero" type="radio" value="soltero" name="tipo_estado" />
 				<label for="id_otro">Otro</label> <input id="id_otro" type="radio"
-					value="otro" name="tipo_estado" /> <br /> <br /> <label>Mensaje:
-				</label>
-				<textarea rows="3" cols="30" name="mensaje">Escriba su mensaje...</textarea>
+					value="otro" name="tipo_estado" /> <br /> <br />
+				<label for "textarea" class="form-label">Mensaje</label> <br />
+				<textarea rows="3" cols="30" name="mensaje" id="textarea">Escriba su mensaje...</textarea>
 				<br /> <br />
 
-				<button type="submit">Enviar Datos</button>
+				<button type="submit" class="btn btn-primary">Enviar Datos</button>
 				<br /> <br />
 
 				<p>
@@ -79,9 +85,7 @@
 		</div>
 
 	</section>
-	<footer>
-		<p>(2022) G38 - Portal de Capacitación – Av. Gral. Güemes 789 –
-			Teléfono (388) 999999 – S. S. de Jujuy, República Argentina.</p>
+	<footer th:replace="/layouts/footer::footer">		
 	</footer>
 </body>
 </html>
