@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/layouts/head::head">
+<meta charset="utf-8">
+<title>TP05 - ProgVisual 2022</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+	<header th:insert="/layouts/header::header"> </header>
+	<section class="container my-4" >
+	<h2 align="center">Alta de Docentes</h2>
+	
+			<form th:action="@{/docente/guardarDocente}" method="POST" th:object="${docente}">
+				<div class="mb-3">
+					<label  class="form-label">Legajo</label> 
+					<input  th:field="*{legajo}" type="number" class="form-control" >
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Nombre</label> 
+					<input  th:field="*{nombre}" type="text" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label  class="form-label">Apellido</label> 
+					<input  th:field="*{apellido}" type="text" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Email</label> 
+					<input th:field="*{email}" type="email" class="form-control" >
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Teléfono</label> 
+					<input th:field="*{telefono}" type="text" class="form-control" >
+				</div>
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+					<button class="btn btn-primary me-md-2" type="submit">Guardar</button>
+					 <a th:href="@{/docente/listaDocentes}" class="btn btn-secondary">Cancelar</a>	  				
+				</div>
+			</form>
+
+	</section>
+	
+	<footer th:replace="/layouts/footer::footer">		
+	</footer>
+	
+</body>
+</html>
