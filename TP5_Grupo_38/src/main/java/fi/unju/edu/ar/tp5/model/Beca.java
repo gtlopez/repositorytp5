@@ -2,6 +2,8 @@ package fi.unju.edu.ar.tp5.model;
 
 import java.time.LocalDate;
 
+import fi.unju.edu.ar.tp5.model.Curso;
+
 public class Beca {
 	private int codigo;
 	private Curso curso;
@@ -10,8 +12,10 @@ public class Beca {
 	private boolean estado;
 	
 	public Beca() {
-		super();
+		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 	public Beca(int codigo, Curso curso, LocalDate fechaInicio, LocalDate fechaCierre, boolean estado) {
 		super();
@@ -21,6 +25,7 @@ public class Beca {
 		this.fechaCierre = fechaCierre;
 		this.estado = estado;
 	}
+
 
 	public int getCodigo() {
 		return codigo;
@@ -61,8 +66,6 @@ public class Beca {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-	
-	
-	
 
+	
 }
