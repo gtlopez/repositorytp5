@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+lang="spa">
+<head th:insert="/layouts/head::head">
+<meta charset="utf-8">
+<title>TP05 - ProgVisual 2022</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+	<header th:replace="/layouts/header::header"> 
+		
+	</header>
+	
+	<section class="container border-top">
+		<div class="container">
+			<div class="row my-4">
+			    <div class="col-10 d-grid gap-2 d-md-flex justify-content-md-center">
+			    <h2 align="center">Cursos</h2>
+			    </div>
+			    <div class="col-2 d-grid gap-2 d-md-flex justify-content-md-end">
+			    <a th:href="@{/curso/nuevoCurso}" class="btn btn-primary">Nuevo</a>
+			    </div>
+			 </div>
+			<div class="col-12 d-flex justify-content-center">
+				<table class="table table-striped table-hover">
+					<tr>
+						<th>Código</th>
+						<th>Título</th>
+						<th>Categoría</th>
+						<th>Inicio de Curso</th>
+						<th>Fin de Curso</th>
+						<th>Duración</th>
+						<th>Modalidad</th>
+						<th>Docente</th>
+						<th>Opciones</th>
+					</tr>
+					<tr th:each="cur: ${cursos}">
+						<td th:text="${cur.codigo}"></td>
+						<td th:text="${cur.titulo}"></td>
+						<td th:text="${cur.categoria}"></td>
+						<td th:text="${#temporals.format(cur.fechaInicio,'dd/MMM/yyyy')}"></td>
+						<td th:text="${#temporals.format(cur.fechaFin,'dd/MMM/yyyy')}"></td>
+						<td th:text="${cur.cantidadDeHoras}"></td>
+						<td th:text="${cur.modalidad}"></td>
+						<td th:text="${cur.docente.nombre}"></td>
+						<td><a href="#" class="btn btn-warning">Editar</a> 
+						    <a href="#" class="btn btn-danger">Eliminar</a>
+						</td>
+					</tr>
+				</table>
+				<br><br>
+			</div>
+		</div>
+	</section>
+	<footer th:replace="/layouts/footer::footer"> </footer>
+</body>
+</html>

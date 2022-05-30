@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+lang="spa">
+<head th:insert="/layouts/head::head">
+<meta charset="utf-8">
+<title>TP05 - ProgVisual 2022</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+	<header th:insert="/layouts/header::header"> 
+	
+	</header>
+
+<section class="container" >
+<div class="col-10 d-grid gap-2 d-md-flex justify-content-md-center my-4">
+				<h2 align="center">Alta de Cursos</h2>
+			</div>
+<div class="container col-6">
+			<form th:action="@{/curso/guardar}" method="POST" th:object="${curso}">
+				<div class="mb-3">
+					<label  class="form-label">Código</label> 
+					<input  th:field="*{codigo}" type="number" class="form-control" >
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Título</label> 
+					<input  th:field="*{titulo}" type="text" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label  class="form-label">Categoría</label> 
+					<input  th:field="*{categoria}" type="text" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Fecha de Inicio</label> 
+					<input th:field="*{fechaInicio}" type="email" class="form-control" >
+				</div>
+				<div class="mb-3">
+					<label class="form-label">Fecha de Fin</label> 
+					<input th:field="*{fechaFin}" type="text" class="form-control" >
+				</div>
+				<div class="mb-3">
+					<label  class="form-label">Cantidad de Horas</label> 
+					<input  th:field="*{cantidadDeHoras}" type="text" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label  class="form-label">Modalidad</label> 
+					<input  th:field="*{modalidad}" type="text" class="form-control">
+				</div>
+				
+				<div class="form-group row">
+							<label class="col-sm-2 col-form-label" for="txtdocente">Docentes</label>
+							<select class="form-control custom-select" id="txtdocente" 
+							
+									
+									th:field="*{docente.apellido}">
+							    <option th:each="doc : ${docentes}" th:value="${doc.legajo}"
+							    
+							   
+							    
+							    th:text="${doc.nombre} + ', ' + ${doc.apellido}" th:selected="false"/>
+						</select>	
+				</div>
+								
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+					<button class="btn btn-primary me-md-2" type="submit">Guardar</button>
+					 <a th:href="@{/home}" class="btn btn-secondary">Cancelar</a>	  				
+				</div>
+			</form><br><br>
+		</div>
+
+</section>
+<footer th:replace="/layouts/footer::footer">		
+	</footer>
+
+</body>
+</html>
