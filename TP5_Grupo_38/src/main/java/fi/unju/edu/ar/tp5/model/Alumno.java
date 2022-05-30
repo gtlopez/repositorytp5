@@ -5,13 +5,13 @@ public class Alumno {
 	private String nombre;
 	private String apellido;
 	private String email;
-	private int telefono;
+	private String telefono;
 	
 	public Alumno() {
 		super();
 	}
 
-	public Alumno(int dni, String nombre, String apellido, String email, int telefono) {
+	public Alumno(int dni, String nombre, String apellido, String email, String telefono) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
@@ -52,14 +52,14 @@ public class Alumno {
 		this.email = email;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 	
-	
 
 }
+
